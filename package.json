@@ -1,12 +1,12 @@
 {
-    "name": "corebot",
+    "name": "alphabot",
     "version": "4.4.3",
-    "description": "Corebot",
+    "description": "AlphaBot",
     "main": "index.js",
     "scripts": {
         "start": "node . --no-install"
     },
-    "author": "CorebotTeam",
+    "author": "muneebwanee",
     "license": "ISC",
     "dependencies": {
         "@discordjs/opus": "^0.3.2",
