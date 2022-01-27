@@ -1,0 +1,651 @@
+######################################
+#                                    #
+#       COMMAND CONFIGURATION        #
+#                                    #
+######################################
+
+#-------------------------------------------------------------------------
+#    CHECK OUR DOCUMENTATION FOR DETAILED DESCRIPTIONS FOR EACH SETTING
+#                     https://docs.corebot.dev
+#-------------------------------------------------------------------------
+
+######################################
+#                                    #
+#     ENABLED/DISABLED COMMANDS      #
+#                                    #
+######################################
+
+Enabled:
+  8ball: true
+  announce: true
+  avatar: true
+  add: true
+  application: true
+  apply: true
+  buy: true
+  backup: true
+  botinfo: true
+  bugreport: true
+  ban: true
+  bans: true
+  closeall: true
+  createrole: true
+  coins: true
+  cointop: true
+  coinflip: true
+  connect4: true
+  code: true
+  command: true
+  clear: true
+  close: true
+  debug: true
+  deleterole: true
+  daily: true
+  eval: true
+  filter: true
+  givecoins: true
+  givelevels: true
+  giverole: true
+  givexp: true
+  gamestats: true
+  gcreate: true
+  gdelete: true
+  greroll: true
+  gstop: true
+  google: true
+  help: true
+  history: true
+  ip: true
+  invites: true
+  invitetop: true
+  join: true
+  key: true
+  kick: true
+  level: true
+  leveltop: true
+  links: true
+  lock: true
+  msg: true
+  math: true
+  modules: true
+  minecraftuser: true
+  mute: true
+  new: true
+  prefix: true
+  pay: true
+  ping: true
+  profile: true
+  play: true
+  pause: true
+  queue: true
+  react: true
+  rolemenu: true
+  rockpaperscissors: true
+  rolldice: true
+  remindme: true
+  report: true
+  reset: true
+  removewarn: true
+  roleinfo: true
+  remove: true
+  rename: true
+  reload: true
+  resume: true
+  say: true
+  snote: true
+  shop: true
+  slots: true
+  suggest: true
+  setactivity: true
+  setcoins: true
+  setexp: true
+  setlevel: true
+  setprefix: true
+  setstatus: true
+  setup: true
+  server: true
+  status: true
+  slowmode: true
+  serverinfo: true
+  staffhelp: true
+  skip: true
+  stop: true
+  takecoins: true
+  takelevels: true
+  takerole: true
+  takexp: true
+  topic: true
+  tictactoe: true
+  tempchannel: true
+  tempban: true
+  tempmute: true
+  update: true
+  unban: true
+  unlock: true
+  unmute: true
+  userinfo: true
+  vote: true
+  verify: true
+  work: true
+  warn: true
+  warnings: true
+
+######################################
+#                                    #
+#        COMMAND PERMISSIONS         #
+#                                    #
+######################################
+
+Inheritance: true
+
+Permissions:
+  8ball:
+    - "@everyone"
+  announce:
+    - "Admin"
+  avatar:
+    - "@everyone"
+  add:
+    - "@everyone"
+  application:
+    - "Admin"
+  apply:
+    - "@everyone"
+  buy:
+    - "@everyone"
+  backup:
+    - "Owner"
+  botinfo:
+    - "Owner"
+  bugreport:
+    - "@everyone"
+  ban:
+    - "Admin"
+  bans:
+    - "Mod"
+  closeall:
+    - "Admin"
+  createrole:
+    - "Admin"
+  coins:
+    - "@everyone"
+  cointop:
+    - "@everyone"
+  coinflip:
+    - "@everyone"
+  connect4:
+    - "@everyone"
+  code:
+    - "Owner"
+  command:
+    - "Owner"
+  clear:
+    - "Mod"
+  close:
+    - "@everyone"
+  debug:
+    - "Admin"
+  deleterole:
+    - "Admin"
+  daily:
+    - "@everyone"
+  eval:
+    - "273679641087180802"
+    - "172131900289187849"
+  filter:
+    - "Admin"
+  givecoins:
+    - "Admin"
+  givelevels:
+    - "Admin"
+  giverole:
+    - "Admin"
+  givexp:
+    - "Admin"
+  gamestats:
+    - "@everyone"
+  gcreate:
+    - "Admin"
+  gdelete:
+    - "Admin"
+  greroll:
+    - "Admin"
+  gstop:
+    - "Admin"
+  google:
+    - "@everyone"
+  help:
+    - "@everyone"
+  history:
+    - "Mod"
+  ip:
+    - "@everyone"
+  invites:
+    - "@everyone"
+  invitetop:
+    - "@everyone"
+  join:
+    - "@everyone"
+  key:
+    - "Owner"
+  kick:
+    - "Mod"
+  level:
+    - "@everyone"
+  leveltop:
+    - "@everyone"
+  links:
+    - "@everyone"
+  lock:
+    - "Mod"
+  msg:
+    - "Admin"
+  math:
+    - "@everyone"
+  modules:
+    - "Owner"
+  minecraftuser:
+    - "@everyone"
+  mute:
+    - "Mod"
+  new:
+    - "@everyone"
+  prefix:
+    - "Admin"
+  pay:
+    - "@everyone"
+  ping:
+    - "@everyone"
+  profile:
+    - "@everyone"
+  play:
+    - "@everyone"
+  pause:
+    - "@everyone"
+  queue:
+    - "@everyone"
+  react:
+    - "Admin"
+  rolemenu:
+    - "Admin"
+  rockpaperscissors:
+    - "@everyone"
+  rolldice:
+    - "@everyone"
+  remindme:
+    - "@everyone"
+  report:
+    - "@everyone"
+  reset:
+    - "Owner"
+  removewarn:
+    - "Mod"
+  roleinfo:
+    - "@everyone"
+  remove:
+    - "@everyone"
+  rename:
+    - "@everyone"
+  reload:
+    - "Owner"
+  resume:
+    - "@everyone"
+  say:
+    - "Admin"
+  snote:
+    - "Admin"
+  shop:
+    - "@everyone"
+  slots:
+    - "@everyone"
+  suggest:
+    - "@everyone"
+  setactivity:
+    - "Owner"
+  setcoins:
+    - "Owner"
+  setexp:
+    - "Owner"
+  setlevel:
+    - "Owner"
+  setprefix:
+    - "Owner"
+  setstatus:
+    - "Owner"
+  setup:
+    - "Owner"
+  server:
+    - "@everyone"
+  status:
+    - "@everyone"
+  slowmode:
+    - "Mod"
+  serverinfo:
+    - "@everyone"
+  staffhelp:
+    - "Staff"
+  skip:
+    - "@everyone"
+  stop:
+    - "@everyone"
+  takecoins:
+    - "Admin"
+  takelevels:
+    - "Admin"
+  takerole:
+    - "Admin"
+  takexp:
+    - "Admin"
+  topic:
+    - "Admin"
+  tictactoe:
+    - "@everyone"
+  tempchannel:
+    - "@everyone"
+  tempban:
+    - "Admin"
+  tempmute:
+    - "Mod"
+  update:
+    - "Admin"
+  unban:
+    - "Admin"
+  unlock:
+    - "Mod"
+  unmute:
+    - "Mod"
+  userinfo:
+    - "@everyone"
+  vote:
+    - "Admin"
+  verify:
+    - "@everyone"
+  work:
+    - "@everyone"
+  warn:
+    - "Helper"
+  warnings:
+    - "Helper"
+
+######################################
+#                                    #
+#          COMMAND ALIASES           #
+#                                    #
+######################################
+
+Aliases:
+  announce:
+    - "announcement"
+  add:
+    - "adduser"
+  application:
+    - "applicationmenu"
+  apply:
+    - "application"
+  backup:
+    - "backupserver"
+  bugreport:
+    - "bug"
+  bans:
+    - "banlist"
+  coins:
+    - "bal"
+    - "balance"
+  cointop:
+    - "coinlb"
+  coinflip:
+    - "flipcoin"
+  connect4:
+    - "c4"
+  command:
+    - "commands"
+  clear:
+    - "purge"
+  close:
+    - "ticketclose"
+    - "closeticket"
+  daily:
+    - "dailycoins"
+  givecoins:
+    - "addcoins"
+  givelevels:
+    - "givelevel"
+    - "addlevel"
+    - "addlevels"
+  giverole:
+    - "addrole"
+  givexp:
+    - "giveexp"
+    - "giveexperience"
+  gamestats:
+    - "connect4stats"
+    - "tictactoestats"
+  gcreate:
+    - "giveawaycreate"
+    - "creategiveaway"
+  gdelete:
+    - "giveawaydelete"
+    - "deletegiveaway"
+  gstop:
+    - "gend"
+    - "giveawayend"
+    - "giveawaystop"
+    - "gforcestop"
+    - "giveawayforcestop"
+  google:
+    - "googlesearch"
+    - "searchgoogle"
+  ip:
+    - "serverip"
+  level:
+    - "explevel"
+    - "xplevel"
+    - "xp"
+    - "exp"
+    - "experience"
+  leveltop:
+    - "levellb"
+  msg:
+    - "message"
+  modules:
+    - "module"
+  minecraftuser:
+    - "mcuser"
+    - "mcaccount"
+    - "namehistory"
+  new:
+    - "ticket"
+  prefix:
+    - "prefixes"
+  ping:
+    - "latency"
+  profile:
+    - "stats"
+  queue:
+    - "musicqueue"
+  rockpaperscissors:
+    - "rps"
+  rolldice:
+    - "roll"
+    - "dice"
+  remindme:
+    - "reminders"
+    - "reminder"
+    - "remind"
+  reset:
+    - "clean"
+  removewarn:
+    - "remwarn"
+    - "deletewarn"
+    - "delwarn"
+  rename:
+    - "renameticket"
+  snote:
+    - "suggestionnote"
+    - "smsg"
+    - "suggestionmessage"
+  shop:
+    - "store"
+  slots:
+    - "slot"
+    - "gamble"
+  setup:
+    - "install"
+  server:
+    - "mcserver"
+  status:
+    - "serverstatus"
+  staffhelp:
+    - "shelp"
+  skip:
+    - "next"
+  stop:
+    - "stopmusic"
+    - "end"
+    - "endsong"
+    - "leave"
+  takecoins:
+    - "removecoins"
+  takelevels:
+    - "takelevel"
+    - "removelevel"
+    - "removelevels"
+  takerole:
+    - "removerole"
+  takexp:
+    - "takeexp"
+    - "takeexperience"
+  topic:
+    - "settopic"
+  tictactoe:
+    - "tic-tac-toe"
+    - "ttt"
+  tempchannel:
+    - "tc"
+  userinfo:
+    - "whois"
+  vote:
+    - "poll"
+  work:
+    - "job"
+
+######################################
+#                                    #
+#        COMMAND DESCRIPTIONS        #
+#                                    #
+######################################
+
+Descriptions:
+  8ball: "Ask the magical 8 ball a question and get an answer"
+  announce: "Create an announcement"
+  avatar: "View a user's avatar"
+  add: "Add a user to a ticket."
+  application: "Open the application menu and perform actions on an application"
+  apply: "Create an application"
+  buy: "Purchase an item from the shop"
+  backup: "Backup or restore your discord server."
+  botinfo: "View info about Corebot"
+  bugreport: "Report a bug on the server"
+  ban: "Ban a member of the server."
+  bans: "View a list of currently banned users"
+  closeall: "Close all open tickets"
+  createrole: "Create a role on the Discord server"
+  coins: "Check how many coins you or another user has"
+  cointop: "Check the coin leaderboard"
+  coinflip: "Flip a coin"
+  connect4: "Connect 4 game"
+  code: "Users can use this to determine if you are using a legitimate copy of Corebot."
+  command: "Enable or disable a command"
+  clear: "Clear a certain amount of messages"
+  close: "Close the ticket you are typing in"
+  debug: "Create a Corebot Debug Report"
+  deleterole: "Delete a role on the Discord server"
+  daily: "Get your daily coins"
+  eval: "Evalute code on the bot (dangerous)"
+  filter: "Add, delete, or view the list of filtered words"
+  givecoins: "Give coins to all or a certain user"
+  givelevels: "Give levels to all or a certain user"
+  giverole: "Give all or a certain user a role"
+  givexp: "Give XP to all or a certain user"
+  gamestats: "View a user's game stats"
+  gcreate: "Create a giveaway"
+  gdelete: "Delete the ongoing giveaway"
+  greroll: "Create a new set of winners for the giveaway"
+  gstop: "Force a giveaway to end"
+  google: "Search for some thing on google"
+  help: "View the command help menu"
+  history: "View the punishment history of a user"
+  ip: "View the Minecraft server's IP"
+  invites: "View your invites"
+  invitetop: "View the invite leaderboard"
+  join: "Have the bot join your voice channel"
+  key: "Install a corebot addon"
+  kick: "Kick a user in the Discord server"
+  level: "Check your current level"
+  leveltop: "Check the experience leaderboard"
+  links: "View links related to the Discord server"
+  lock: "Lock the channel so users cannot send messages"
+  msg: "Message all or certain users"
+  math: "Evaluate a math equation"
+  modules: "Enable or disable a module"
+  minecraftuser: "View minecraft account information"
+  mute: "Mute a user in the Discord server"
+  new: "Create a ticket"
+  prefix: "Check the bot's prefix"
+  pay: "Send money to a user"
+  ping: "Check the bot's latency"
+  profile: "View a user's profile"
+  play: "Play a song"
+  pause: "Pause the current song"
+  queue: "View the song queue"
+  react: "React to a message with an emoji"
+  rolemenu: "Send the reaction role menu"
+  rockpaperscissors: "Rock paper scissors game"
+  rolldice: "Roll a dice"
+  remindme: "Make the bot remind you to do something"
+  report: "Report a user in the Discord server"
+  reset: "Reset coins or exp of a user"
+  removewarn: "Remove a warning from a user"
+  roleinfo: "View information on a role"
+  remove: "Remove a user from the ticket you are typing in"
+  rename: "Rename a ticket channel"
+  reload: "Reload certain aspects of the bot"
+  resume: "Resume the current song"
+  say: "Make the bot send a certain message"
+  snote: "Send a message in a suggestion channel"
+  shop: "View the Discord server's shop"
+  slots: "Gamble a certain amount of your coins"
+  suggest: "Suggest something for the Discord server"
+  setactivity: "Set the bot's activity"
+  setcoins: "Set the coins of all or a certain user"
+  setexp: "Set the exp of all or a certain user"
+  setlevel: "Set the level of all or a certain user"
+  setprefix: "Set the bot's prefix"
+  setstatus: "Set the bot's status"
+  setup: "Create any missing channels and roles for the server"
+  server: "View minecraft server information"
+  status: "View a Minecraft server's status"
+  slowmode: "Turn on or off slowmode"
+  serverinfo: "View server information"
+  staffhelp: "View the staff command help menu"
+  skip: "Skip to a certain song in the queue"
+  stop: "Stop the bot from playing music."
+  takecoins: "Take coins from all or a certain user"
+  takelevels: "Take levels from all or a certain user"
+  takerole: "Take a role from all or a certain user"
+  takexp: "Take XP from all or a certain user"
+  topic: "Change the topic of a channel"
+  tictactoe: "Tic-Tac-Toe game"
+  tempchannel: "Manage your temp channel"
+  tempban: "Temporarily ban a user on the Discord server"
+  tempmute: "Temporarily mute a user on the Discord server"
+  update: "Create an update"
+  unban: "Unban a user on the Discord server"
+  unlock: "Unlock the channel you are typing in"
+  unmute: "Unmute a user on the Discord server"
+  userinfo: "View your or a certain user's info"
+  vote: "Create a poll"
+  verify: "Verify that you aren't a bot account"
+  work: "Work at a job to earn coins"
+  warn: "Warn a user on the Discord server"
+  warnings: "View the warnings of a user on the Discord server"

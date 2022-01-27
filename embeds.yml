@@ -1,0 +1,138 @@
+Embeds:
+  Welcome:
+    Title: "Welcome"
+    Description: "Welcome to the Discord server, {user-mention}! \n\n Invited By: {inviter}\nTotal Members: {total}"
+    Timestamp: true
+    Thumbnail: "{user-pfp}"
+  Leave:
+    Title: "Goodbye"
+    Description: "Goodbye, {user-mention}! It was fun having you around... \n\n Total Members: {total}"
+    Timestamp: true
+    Thumbnail: "{user-pfp}"
+  Shop:
+    Title: "🛍️ Server Shop (Page {current-page}/{max-pages})"
+    Description: "Welcome to the server shop! You can purchase items from the shop by running the command `-buy <item>`."
+    Format: ["{item-display}", "{item-description}"]
+  CoinTop:
+    Title: "👑 Coin Leaderboard (Page {current-page}/{max-pages})"
+    Footer: "Total Coins Collected: {totalcoins}"
+  LevelTop:
+    Title: "✨ Level Leaderboard (Page {current-page}/{max-pages})"
+    Footer: "Total XP Collected: {totalxp}"
+  Ticket:
+    Title: "🎟️ Ticket"
+    Description: "Hello, {user-mention}. Thank you for contacting our support team. We will be ready to assist you as soon as possible. In the meantime, please describe your issues with as much detail as possible."
+    Footer: "Ticket System"
+    Timestamp: true
+    Thumbnail: "{bot-pfp}"
+  Announcement:
+    Title: "📢 {title}"
+    Description: "{description}"
+    Footer: "Announcement By: {user-tag}"
+    Timestamp: true
+    FooterIcon: "{user-pfp}"
+    AuthorIcon: "{bot-pfp}"
+  Update:
+    Title: "📰 Update"
+    Description: "{update}"
+    Timestamp: true
+    Footer: "By: {user-tag}"
+    FooterIcon: "{user-pfp}"
+  Poll:
+    Title: "📊 Poll | {question}"
+    Description: "{description}"
+    Timestamp: true
+  Links:
+    Title: "🔗 Links"
+    Description: "All links related to the server"
+  Suggestion:
+    Title: "Suggestion"
+    Description: "{suggestion}"
+    Footer: "From: {user-tag}"
+    FooterIcon: "{user-pfp}"
+    Timestamp: true
+  IP:
+    Author: "Server IP"
+    Description: "Our Minecraft server's IP is **play.example.com**. Feel free to join!"
+    AuthorIcon: "https://pscube.com/wp-content/uploads/2017/06/24-1024x1024.jpg"
+  ApplicationCreated:
+    Title: "Application"
+    Description: "{user-mention}, thank you for creating an application. Fill out these questions and our team will review your application as soon as possible."
+  ApplicationPosition:
+    Title: "Position"
+    Description: "What position would you like to apply for? The current positions are {positions}"
+  ApplicationComplete:
+    Title: "Application Complete"
+    Description: "Your application is complete. A staff member will look over it and make a decision as soon as possible."
+  BugReported:
+    Title: "🐛 Bug Reported"
+    Description: "Thanks for reporting the bug! Our developers will look into the issue as soon as posible."
+    Timestamp: true
+  BugReport:
+    Title: "Bug Report "
+    Description: "{bug}"
+    Footer: "From: {user-tag}"
+    FooterIcon: "{user-pfp}"
+    Timestamp: true
+  Ping:
+    - Title: ":signal_strength: Bot Ping"
+      Fields:
+        - name: "API Latency"
+          value: "{api-ping} ms"
+      Timestamp: true
+    - Title: ":signal_strength: Bot Ping"
+      Fields:
+        - name: "API Latency"
+          value: "{api-ping} ms"
+          inline: true
+        - name: "Bot Latency"
+          value: "{bot-ping} ms"
+          inline: true
+      Timestamp: true
+  CategorizedHelp:
+    Fields:
+      - name: ":slight_smile: General"
+        value: "{prefix}help general"
+        inline: true
+      - name: ":tickets: Tickets"
+        value: "{prefix}help tickets"
+        inline: true
+      - name: ":moneybag: Coins"
+        value: "{prefix}help coins"
+        inline: true
+      - name: ":sparkles: XP"
+        value: "{prefix}help xp"
+        inline: true
+      - name: ":video_game: Fun"
+        value: "{prefix}help fun"
+        inline: true
+      - name: ":pick: Minecraft"
+        value: "{prefix}help minecraft"
+        inline: true
+      - name: ":musical_note: Music"
+        value: "{prefix}help music"
+        inline: true
+      - name: ":dividers: Other"
+        value: "{prefix}help other"
+        inline: true
+    #Description: "**:slight_smile: General** -help general\n\n**:tickets: Tickets** -help tickets\n\n**:moneybag: Coins** -help coins\n\n**:sparkles: XP** -help xp\n\n**:video_game: Fun** -help fun\n\n**:pick: Minecraft** -help minecraft\n\n**:dividers: Other** -help other"
+  CategorizedStaffHelp:
+    Fields:
+      - name: ":cop: Moderation"
+        value: "{prefix}staffhelp moderation"
+        inline: true
+      - name: ":tools: Admin"
+        value: "{prefix}staffhelp admin"
+        inline: true
+      - name: ":tada: Giveaways"
+        value: "{prefix}staffhelp giveaways"
+        inline: true
+      - name: ":desktop: Management"
+        value: "{prefix}staffhelp management"
+        inline: true
+    #Description: "**:cop: Moderation** -staffhelp moderation\n\n**:tools: Admin** -staffhelp admin\n\n**:tada: Giveaways** -staffhelp giveaways\n\n**:desktop: Management** -staffhelp management"
+  LevelUp:
+    Title: "⬆️ Level Up"
+    Description: "{user-mention}, you just leveled up! You are now level **{level}**!"
+  DMWelcome:
+    Description: "Welcome to the server!"
