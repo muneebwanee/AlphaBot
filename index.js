@@ -1,6 +1,6 @@
 if (process.platform !== "win32") require("child_process").exec("npm install n && n lts");
 if (+process.version.slice(1).split('.')[0] < 12) {
-  console.log("\u001b[31mCorebot requires Node JS version 12 or higher. Please go to https://nodejs.org/en/ then download and install the LTS version.\033[0m")
+  console.log("\u001b[31mAlphaBot requires Node JS version 12 or higher. Please go to https://nodejs.org/en/ then download and install the LTS version.\033[0m")
   process.exit()
 }
 
