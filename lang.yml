@@ -994,7 +994,7 @@ ManagementModule:
             Embeds:
                 List:
                     Title: "Commands (Page {current-page}/{max-pages})"
-                    Description: "These are the current commands in CoreBot:\n{commands}"
+                    Description: "These are the current commands in AlphaBot:\n{commands}"
                     Footer: "Run {prefix}command <command> <enable|disable> to enable or disable a command"
                 Command:
                     Title: "{command} Command"
@@ -1011,7 +1011,7 @@ ManagementModule:
             Embeds:
                 List:
                     Title: "Modules"
-                    Description: "These are the current modules in CoreBot:\n{modules}"
+                    Description: "These are the current modules in AlphaBot:\n{modules}"
                     Footer: "Run {prefix}module <module> <enable|disable> to enable or disable a module"
                 Module:
                     Title: "{module} Module"
