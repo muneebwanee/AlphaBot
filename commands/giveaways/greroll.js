@@ -24,13 +24,20 @@ module.exports = {
                 if (reactions.length == 0) return message.channel.send(Embed({ preset: 'error', description: lang.GiveawaySystem.Errors.NoOneEntered }));
 
 
-                if (users.length !== undefined && users.length > 1) {
-                    await Utils.asyncForEach(users, async userID => {
-                        let updatedReactions = await Utils.variables.db.get.getGiveawayReactions(giveaway.messageID);
-                        let newWinner = updatedReactions[~~(Math.random() * updatedReactions.length)]
-                        newWinners.push(newWinner)
-                        if (newWinner) await Utils.variables.db.update.giveaways.reactions.removeReaction(giveaway.messageID, newWinner)
-                    })
+                if (users.length !== undefined && users.length > 1) {  
+    // Get reactions once at the beginning to avoid race conditions  
+    let availableReactions = await Utils.variables.db.get.getGiveawayReactions(giveaway.messageID);  
+      
+    // Shuffle and select winners without modifying database in loop  
+    const shuffled = availableReactions.sort(() => 0.5 - Math.random());  
+    const selectedWinners = shuffled.slice(0, Math.min(users.length, shuffled.length));  
+      
+    // Update database in batch after selection  
+    for (const winner of selectedWinners) {  
+        newWinners.push(winner);  
+        await Utils.variables.db.update.giveaways.reactions.removeReaction(giveaway.messageID, winner);  
+    }  
+}
 
                     await end()
                     channel.send(users.map(u => "<@" + u + ">")).then(m => m.delete({ timeout: 2500 }));
