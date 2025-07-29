@@ -1,9 +1,9 @@
-# 🤖 AlphaBot - Advanced Discord Bot
+
 
 <div align="center">
-
-![AlphaBot Logo](https://via.placeholder.com/200x200/7289da/ffffff?text=AlphaBot)
-
+    
+## 🤖 AlphaBot - Advanced Discord Bot
+    
 [![Node.js](https://img.shields.io/badge/Node.js-16.0+-green.svg)](https://nodejs.org/)
 [![Discord.js](https://img.shields.io/badge/Discord.js-v13.x-blue.svg)](https://discord.js.org/)
 [![License](https://img.shields.io/badge/License-ISC-yellow.svg)](LICENSE)
@@ -404,8 +404,8 @@ This project is licensed under the ISC License - see the `LICENSE` file for deta
 ### 📞 Support & Links
 [**GitHub Issues**](https://github.com/muneebwanee/AlphaBot/issues) | [**Website**](https://alphabot.eu.org) | [**Support Server**](https://discord.alphabot.eu.org)
 
-Made with ❤️ by muneebwanee
+[⭐ **Star this repo**](https://github.com/muneebwanee/AlphaBot) | [🐛 **Report a Bug**](https://github.com/muneebwanee/AlphaBot/issues/new?assignees=&labels=bug&template=bug_report.md&title=) | [💡 **Request a Feature**](https://github.com/muneebwanee/AlphaBot/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=)
 
-⭐ **Star this repo** | 🐛 **Report a Bug** | 💡 **Request a Feature**
+Made with ❤️ by muneebwanee
 
 </div>
