@@ -142,9 +142,14 @@ installModules().then(async () => {
   const EventHandler = require('./modules/handlers/EventHandler').init(bot);
 
   const error = require('./modules/error');
-  process.on('uncaughtException', (err) => {
-    return;
-  })
+  process.on('uncaughtException', (err) => {  
+  console.error('Uncaught Exception:', err);  
+  console.error('Stack trace:', err.stack);  
+  // Log to file or external service  
+  require('./modules/error')(err.toString(), err.stack || 'No stack trace', 'uncaughtException');  
+  // Graceful shutdown instead of silent ignore  
+  process.exit(1);  
+});
 
   const { inspect } = require("util");
   process.on('unhandledRejection', async function (reason, promise) {
