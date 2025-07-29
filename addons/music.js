@@ -129,45 +129,67 @@ module.exports = async bot => {
 
         let server = servers.get(guild.id)
 
-        if (!server) {
-            server = new Server(message, guild)
-            servers.set(guild.id, server)
-            server.songs.push(song)
-        }
-
-        if (!server.connection) server.connection = await server.voiceChannel.join()
+        if (!server) {  
+    server = new Server(message, guild)  
+    servers.set(guild.id, server)  
+    server.songs.push(song)  
+}  
+  
+try {  
+    if (!server.connection) {  
+        server.connection = await server.voiceChannel.join();  
+    }  
+} catch (error) {  
+    console.error('Failed to join voice channel:', error);  
+    servers.delete(guild.id);  
+    return server.textChannel.send(Embed({ preset: "error", description: "Failed to join voice channel. Please check bot permissions." }));  
+}
 
         let dispatcher;
 
         try {
             dispatcher = server.connection.play(await ytdlDiscord(song.url, { highWaterMark: 1 << 25, quality: "highestaudio" }), { type: 'opus' });
-        } catch (e) {
-            if (e.message == "Status code: 429") console.log(errorPrefix + musicAddonPrefix + " You are currently being rate limited by Google/YouTube! (Error code 429)")
-            if (e.message.includes("This is a private video.")) {
-                server.textChannel.send(Embed({ preset: "error", description: "This video is privated. " + (server.songs.length ? "Attempting to play the next song..." : "Ending queue.") }))
-                server.songs.shift()
-
-                if (server.songs.length) {
-
-                    server.textChannel.send(Embed({
-                        title: config.Lang.Embeds.NowPlaying.Title,
-                        fields: [{ name: server.songs[0].author.name, value: server.songs[0].title, inline: true }, { name: config.Lang.Embeds.NowPlaying.RequestBy, value: message ? '<@' + message.author.id + '>' : config.Lang.AutoPlay.AutoPlay, inline: true }],
-                        thumbnail: server.songs[0].image,
-                        timestamp: new Date()
-                    }))
-
-                    return play(message, server.songs[0], guild)
-                }
-                else {
-                    server.connection.dispatcher.destroy();
-                    guild.me.voice.channel.leave();
-                    servers.delete(guild.id)
-                }
-            }
-            else console.log(e)
-
-            return server.textChannel.send(Embed({ preset: "console" }))
-        }
+} catch (e) {  
+    console.error('Music playback error:', e);  
+      
+    if (e.message === "Status code: 429") {  
+        console.log(errorPrefix + musicAddonPrefix + " Rate limited by YouTube! Implementing backoff...");  
+        // Implement exponential backoff  
+        setTimeout(() => {  
+            if (server.songs.length > 0) {  
+                play(message, server.songs[0], guild);  
+            }  
+        }, 30000); // 30 second delay  
+        return;  
+    }  
+      
+    if (e.message.includes("This is a private video.")) {  
+        server.textChannel.send(Embed({ preset: "error", description: "This video is private. " + (server.songs.length > 1 ? "Playing next song..." : "Queue ended.") }));  
+        server.songs.shift();  
+          
+        if (server.songs.length > 0) {  
+            return play(message, server.songs[0], guild);  
+        } else {  
+            // Proper cleanup  
+            try {  
+                if (server.connection && server.connection.dispatcher) {  
+                    server.connection.dispatcher.destroy();  
+                }  
+                if (guild.me.voice.channel) {  
+                    guild.me.voice.channel.leave();  
+                }  
+            } catch (cleanupError) {  
+                console.error('Cleanup error:', cleanupError);  
+            }  
+            servers.delete(guild.id);  
+            return;  
+        }  
+    }  
+      
+    // Log other errors properly  
+    console.error('Unhandled music error:', e);  
+    return server.textChannel.send(Embed({ preset: "error", description: "An error occurred while playing music. Please try again." }));  
+}
 
         dispatcher.setVolumeLogarithmic(server.volume / 5);
 
