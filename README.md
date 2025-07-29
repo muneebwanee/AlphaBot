@@ -1,4 +1,3 @@
-Generated markdown
 # 🤖 AlphaBot - Advanced Discord Bot
 
 <div align="center">
@@ -56,40 +55,31 @@ Node.js 16.9+ is required.
 ```bash
 node --version
 # Should be 16.9.0 or higher
-content_copy
-download
-Use code with caution.
-Markdown
-Installation
-Clone the Repository
-Generated bash
-git clone https://github.com/muneebwanee/AlphaBot.git
-cd AlphaBot
-content_copy
-download
-Use code with caution.
-Bash
-Recommended: Manual Installation
-Install dependencies manually first, then start the bot with auto-install disabled.
-Generated bash
-npm install
-node index.js --no-install
-content_copy
-download
-Use code with caution.
-Bash
-Alternative: Auto-Install
-Let the bot handle dependency installation automatically.
-Generated bash
-node index.js --show-install-output
-content_copy
-download
-Use code with caution.
-Bash
-📋 Dependencies
-The bot uses these key packages:
+```
 
-Generated json
+### Installation
+1.  **Clone the Repository**
+    ```bash
+    git clone https://github.com/muneebwanee/AlphaBot.git
+    cd AlphaBot
+    ```
+
+2.  **Recommended: Manual Installation**
+    Install dependencies manually first, then start the bot with auto-install disabled.
+    ```bash
+    npm install
+    node index.js --no-install
+    ```
+
+3.  **Alternative: Auto-Install**
+    Let the bot handle dependency installation automatically.
+    ```bash
+    node index.js --show-install-output
+    ```
+
+### 📋 Dependencies
+The bot uses these key packages:
+```json
 {
   "discord.js": "^13.1.0",
   "better-sqlite3": "^7.4.3",
@@ -101,110 +91,114 @@ Generated json
   "chalk": "^4.1.2",
   "yaml": "^1.10.2"
 }
-content_copy
-download
-Use code with caution.
-Json
-⚙️ Configuration
-Create Configuration File
-Create a config.yml file in the root directory.
-Generated yml
-# Main Bot Configuration
-Token: "YOUR_BOT_TOKEN_HERE"
-Prefix: "!"
-YouTubeAPIKey: "YOUR_YOUTUBE_API_KEY"
+```
 
-# Database Configuration
-Database:
-  Type: "sqlite" # or "mysql"
+### ⚙️ Configuration
+1.  **Create Configuration File**
+    Create a `config.yml` file in the root directory.
 
-  # For MySQL (optional)
-  MySQL:
-    Host: "localhost"
-    User: "root"
-    Password: "password"
-    Database: "alphabot"
+    ```yml
+    # Main Bot Configuration
+    Token: "YOUR_BOT_TOKEN_HERE"
+    Prefix: "!"
+    YouTubeAPIKey: "YOUR_YOUTUBE_API_KEY"
+    
+    # Database Configuration
+    Database:
+      Type: "sqlite" # or "mysql"
+    
+      # For MySQL (optional)
+      MySQL:
+        Host: "localhost"
+        User: "root"
+        Password: "password"
+        Database: "alphabot"
+    
+    # Embed Colors
+    EmbedColors:
+      Success: "#00ff00"
+      Error: "#ff0000"
+      Info: "#0099ff"
+    
+    # Leaderboard Settings
+    Leaderboards:
+      UsersPerPage:
+        Levels: 10
+      FilterUnknown: true
+    ```
 
-# Embed Colors
-EmbedColors:
-  Success: "#00ff00"
-  Error: "#ff0000"
-  Info: "#0099ff"
+2.  **Database Setup**
+    The bot automatically creates the required database tables upon the first run.
+    ```sql
+    -- Auto-generated tables include:
+    CREATE TABLE IF NOT EXISTS users (user TEXT, guild TEXT, coins INTEGER, xp INTEGER, level INTEGER);
+    CREATE TABLE IF NOT EXISTS guilds (guild TEXT, prefix TEXT);
+    CREATE TABLE IF NOT EXISTS giveaways (messageID TEXT, name TEXT, channel TEXT, guild TEXT, ended BOOLEAN, end INTEGER, winners INTEGER, creator TEXT, description TEXT);
+    CREATE TABLE IF NOT EXISTS modules (name TEXT, enabled BOOLEAN);
+    CREATE TABLE IF NOT EXISTS commands (name TEXT, enabled BOOLEAN);
+    CREATE TABLE IF NOT EXISTS tickets (channelID TEXT, userID TEXT, guildID TEXT, reason TEXT);
+    CREATE TABLE IF NOT EXISTS game_data (user TEXT, guild TEXT, data TEXT);
+    ```
 
-# Leaderboard Settings
-Leaderboards:
-  UsersPerPage:
-    Levels: 10
-  FilterUnknown: true
-content_copy
-download
-Use code with caution.
-Yml
-Database Setup
-The bot automatically creates the required database tables upon the first run.
-Generated sql
--- Auto-generated tables include:
-CREATE TABLE IF NOT EXISTS users (user TEXT, guild TEXT, coins INTEGER, xp INTEGER, level INTEGER);
-CREATE TABLE IF NOT EXISTS guilds (guild TEXT, prefix TEXT);
-CREATE TABLE IF NOT EXISTS giveaways (messageID TEXT, name TEXT, channel TEXT, guild TEXT, ended BOOLEAN, end INTEGER, winners INTEGER, creator TEXT, description TEXT);
-CREATE TABLE IF NOT EXISTS modules (name TEXT, enabled BOOLEAN);
-CREATE TABLE IF NOT EXISTS commands (name TEXT, enabled BOOLEAN);
-CREATE TABLE IF NOT EXISTS tickets (channelID TEXT, userID TEXT, guildID TEXT, reason TEXT);
-CREATE TABLE IF NOT EXISTS game_data (user TEXT, guild TEXT, data TEXT);
-content_copy
-download
-Use code with caution.
-SQL
-Discord Bot Setup
-Go to the Discord Developer Portal.
-Create a new application.
-Go to the "Bot" section and click "Add Bot".
-Copy the bot's token and paste it into your config.yml.
-Enable the required Privileged Gateway Intents:
-✅ Server Members Intent
-✅ Message Content Intent
-✅ Presence Intent
-🎯 Usage Examples
-Music Commands
-!play <song name>: Play a song.
-!queue: View the current queue.
-!skip: Skip the current song.
-!pause: Pause playback.
-!resume: Resume playback.
-!stop: Stop music and clear the queue.
-Economy Commands
-!coins: Check your balance.
-!daily: Claim your daily reward.
-!work: Work at your job.
-!pay <@user> <amount>: Send coins to a user.
-!slots <bet>: Play the slot machine.
-!coinflip <heads/tails> <bet>: Flip a coin with a bet.
-Experience Commands
-!level: Check your level.
-!level <@user>: Check another user's level.
-!leveltop: View the level leaderboard.
-!leveltop <page>: View a specific page of the leaderboard.
-Giveaway Commands
-!gcreate: Start the interactive giveaway setup.
-!gstop <giveaway name>: Stop a giveaway.
-!greroll <giveaway name>: Reroll a giveaway winner.
-!gdelete <giveaway name>: Delete a giveaway.
-Admin Commands
-!setup: Automatically set up server roles and channels.
-!setprefix <new prefix>: Change the bot's prefix.
-!staffhelp: View the list of staff-only commands.
-!module enable music: Enable the music module.
-!command disable eval: Disable the eval command.
-Entertainment Commands
-!tictactoe <@user>: Play TicTacToe.
-!connect4 <@user>: Play Connect 4.
-!rps <rock/paper/scissors>: Play Rock Paper Scissors.
-!8ball <question>: Ask the Magic 8-Ball a question.
-!math <expression>: Solve a math problem.
-!rolldice: Roll a dice.
-🏗️ Architecture
-Core Structure
-Generated code
+3.  **Discord Bot Setup**
+    1.  Go to the [Discord Developer Portal](https://discord.com/developers/applications).
+    2.  Create a new application.
+    3.  Go to the "Bot" section and click "Add Bot".
+    4.  Copy the bot's **token** and paste it into your `config.yml`.
+    5.  Enable the required **Privileged Gateway Intents**:
+        - ✅ Server Members Intent
+        - ✅ Message Content Intent
+        - ✅ Presence Intent
+
+## 🎯 Usage Examples
+
+### Music Commands
+- `!play <song name>`: Play a song.
+- `!queue`: View the current queue.
+- `!skip`: Skip the current song.
+- `!pause`: Pause playback.
+- `!resume`: Resume playback.
+- `!stop`: Stop music and clear the queue.
+
+### Economy Commands
+- `!coins`: Check your balance.
+- `!daily`: Claim your daily reward.
+- `!work`: Work at your job.
+- `!pay <@user> <amount>`: Send coins to a user.
+- `!slots <bet>`: Play the slot machine.
+- `!coinflip <heads/tails> <bet>`: Flip a coin with a bet.
+
+### Experience Commands
+- `!level`: Check your level.
+- `!level <@user>`: Check another user's level.
+- `!leveltop`: View the level leaderboard.
+- `!leveltop <page>`: View a specific page of the leaderboard.
+
+### Giveaway Commands
+- `!gcreate`: Start the interactive giveaway setup.
+- `!gstop <giveaway name>`: Stop a giveaway.
+- `!greroll <giveaway name>`: Reroll a giveaway winner.
+- `!gdelete <giveaway name>`: Delete a giveaway.
+
+### Admin Commands
+- `!setup`: Automatically set up server roles and channels.
+- `!setprefix <new prefix>`: Change the bot's prefix.
+- `!staffhelp`: View the list of staff-only commands.
+- `!module enable music`: Enable the music module.
+- `!command disable eval`: Disable the `eval` command.
+
+### Entertainment Commands
+- `!tictactoe <@user>`: Play TicTacToe.
+- `!connect4 <@user>`: Play Connect 4.
+- `!rps <rock/paper/scissors>`: Play Rock Paper Scissors.
+- `!8ball <question>`: Ask the Magic 8-Ball a question.
+- `!math <expression>`: Solve a math problem.
+- `!rolldice`: Roll a dice.
+
+## 🏗️ Architecture
+
+### Core Structure
+```
 AlphaBot/
 ├── 📁 addons/
 │   └── 🎵 music.js         # Music system
@@ -230,52 +224,46 @@ AlphaBot/
 ├── 🎨 embeds.yml           # Embed templates
 ├── 🌐 TLDs.yml            # Domain validation list
 └── 📦 package.json        # Project dependencies
-content_copy
-download
-Use code with caution.
-Database Integration
-The bot uses a unified database abstraction layer supporting both SQLite and MySQL.
+```
 
-Generated javascript
+### Database Integration
+The bot uses a unified database abstraction layer supporting both SQLite and MySQL.
+```javascript
 // Example Database Access Patterns
 const coins = await Utils.variables.db.get.getCoins(member);
 const xp = await Utils.variables.db.get.getExperience(member);
 
 await Utils.variables.db.update.coins.updateCoins(member, amount, 'add');
 await Utils.variables.db.update.giveaways.addGiveaway(giveawayData);
-content_copy
-download
-Use code with caution.
-JavaScript
-Handler System
-Generated javascript
+```
+
+### Handler System
+```javascript
 // Command Handler Initialization
 const CommandHandler = require('./modules/handlers/CommandHandler').init();
 
 // Event Handler Initialization
 const EventHandler =require('./modules/handlers/EventHandler').init(bot);
-content_copy
-download
-Use code with caution.
-JavaScript
-🔧 Advanced Configuration
-Custom Modules
+```
+
+## 🔧 Advanced Configuration
+
+### Custom Modules
 Enable or disable entire feature sets for your server.
+- `!module list`: List all available modules.
+- `!module enable music`: Enable the music module.
+- `!module disable coins`: Disable the economy module.
+- `!module giveaways`: Check the status of the giveaway module.
 
-!module list: List all available modules.
-!module enable music: Enable the music module.
-!module disable coins: Disable the economy module.
-!module giveaways: Check the status of the giveaway module.
-Command Management
+### Command Management
 Control individual commands.
+- `!command list`: List all commands.
+- `!command eval disable`: Disable the `eval` command (recommended).
+- `!command setup enable`: Enable the `setup` command.
 
-!command list: List all commands.
-!command eval disable: Disable the eval command (recommended).
-!command setup enable: Enable the setup command.
-Permission System
-Configure command permissions in commands.yml.
-
-Generated yml
+### Permission System
+Configure command permissions in `commands.yml`.
+```yml
 Permissions:
   eval:
     - "OWNER_ID_HERE"  # Restrict dangerous commands
@@ -283,14 +271,11 @@ Permissions:
     - "ADMIN_ROLE_ID"  # Admin-only commands
   staffhelp:
     - "STAFF_ROLE_ID"  # Staff commands
-content_copy
-download
-Use code with caution.
-Yml
-Language Customization
-Customize all bot messages in lang.yml.
+```
 
-Generated yml
+### Language Customization
+Customize all bot messages in `lang.yml`.
+```yml
 GiveawaySystem:
   Commands:
     Gcreate:
@@ -306,115 +291,121 @@ CoinsModule:
     Daily:
       Title: "💰 Daily Coins"
       Description: "You have claimed your daily **{amount}** coins!"
-content_copy
-download
-Use code with caution.
-Yml
-🚨 Security & Best Practices
-Disable eval command immediately: !command eval disable
-Never share your bot token.
-Restrict admin commands to trusted users only using commands.yml.
-Perform regular backups of your database (database.db for SQLite).
-Monitor bot logs (errors.txt, console.log) for suspicious activity.
-Recommended Production Setup
-Use a process manager like PM2 for better stability and management.
+```
 
-Generated bash
+## 🚨 Security & Best Practices
+
+-   **Disable `eval` command immediately**: `!command eval disable`
+-   **Never share your bot token**.
+-   Restrict admin commands to trusted users only using `commands.yml`.
+-   Perform regular backups of your database (`database.db` for SQLite).
+-   Monitor bot logs (`errors.txt`, `console.log`) for suspicious activity.
+
+### Recommended Production Setup
+Use a process manager like PM2 for better stability and management.
+```bash
 # Start with PM2
 pm2 start index.js --name "AlphaBot" -- --no-install
-content_copy
-download
-Use code with caution.
-Bash
-Environment Variables (Alternative)
-For advanced users, you can modify the bot to use a .env file with dotenv.
+```
 
-Generated code
+### Environment Variables (Alternative)
+For advanced users, you can modify the bot to use a `.env` file with `dotenv`.
+```
 DISCORD_TOKEN=your_bot_token_here
 YOUTUBE_API_KEY=your_youtube_api_key
 DATABASE_TYPE=sqlite
 PREFIX=!
-content_copy
-download
-Use code with caution.
-🐛 Troubleshooting
-Common Issues
-Bot won't start:
-Check Node.js version (node -v must be 16.9+).
-Delete node_modules and package-lock.json, then reinstall with npm install.
-Start with debug output: node index.js --show-install-output
-Music not working:
-Ensure audio dependencies are installed: npm install @discordjs/opus ffmpeg-static
-For Linux, you may need to install ffmpeg system-wide: sudo apt-get install ffmpeg
-Database errors:
-For SQLite, ensure better-sqlite3 is installed: npm install better-sqlite3.
-For MySQL, ensure mysql is installed: npm install mysql.
-Check file permissions for database.db if using SQLite.
-Permission errors:
-Ensure the bot has the necessary permissions in your Discord server settings (Role > Bot Role).
-Required permissions include:
-Send Messages
-Embed Links
-Add Reactions
-Connect (for music)
-Speak (for music)
-Manage Messages (for giveaways)
-Log Files
-The bot creates several log files in the root directory:
+```
 
-errors.txt: Detailed error logs.
-console.log: General logs and bot activity (if configured).
-database.db: The SQLite database file.
-📈 Monitoring & Maintenance
-Health Checks
-!botinfo: Check the bot's status and uptime.
-!module list: Check the status of all modules.
-!command list: Check the status of all commands.
-!stats: View bot and database statistics (if implemented).
-Regular Maintenance
-Weekly: Check errors.txt for recurring issues.
-Monthly: Update dependencies with npm update.
-Quarterly: Clean up the database by removing old, inactive entries.
-As needed: Apply security updates and patch bugs.
-Performance Optimization
-Generated sql
+## 🐛 Troubleshooting
+
+### Common Issues
+-   **Bot won't start:**
+    -   Check Node.js version (`node -v` must be 16.9+).
+    -   Delete `node_modules` and `package-lock.json`, then reinstall with `npm install`.
+    -   Start with debug output: `node index.js --show-install-output`
+
+-   **Music not working:**
+    -   Ensure audio dependencies are installed: `npm install @discordjs/opus ffmpeg-static`
+    -   For Linux, you may need to install `ffmpeg` system-wide: `sudo apt-get install ffmpeg`
+
+-   **Database errors:**
+    -   For SQLite, ensure `better-sqlite3` is installed: `npm install better-sqlite3`.
+    -   For MySQL, ensure `mysql` is installed: `npm install mysql`.
+    -   Check file permissions for `database.db` if using SQLite.
+
+-   **Permission errors:**
+    -   Ensure the bot has the necessary permissions in your Discord server settings (Role > Bot Role).
+    -   Required permissions include:
+        -   Send Messages
+        -   Embed Links
+        -   Add Reactions
+        -   Connect (for music)
+        -   Speak (for music)
+        -   Manage Messages (for giveaways)
+
+### Log Files
+The bot creates several log files in the root directory:
+-   `errors.txt`: Detailed error logs.
+-   `console.log`: General logs and bot activity (if configured).
+-   `database.db`: The SQLite database file.
+
+## 📈 Monitoring & Maintenance
+
+### Health Checks
+- `!botinfo`: Check the bot's status and uptime.
+- `!module list`: Check the status of all modules.
+- `!command list`: Check the status of all commands.
+- `!stats`: View bot and database statistics (if implemented).
+
+### Regular Maintenance
+-   **Weekly:** Check `errors.txt` for recurring issues.
+-   **Monthly:** Update dependencies with `npm update`.
+-   **Quarterly:** Clean up the database by removing old, inactive entries.
+-   **As needed:** Apply security updates and patch bugs.
+
+### Performance Optimization
+```sql
 -- Database optimization (SQLite)
 PRAGMA optimize;
 VACUUM;
 
 -- Example: Clear old giveaway data from the database
 DELETE FROM giveaways WHERE ended = 1 AND end < (strftime('%s', 'now') - 2592000);
-content_copy
-download
-Use code with caution.
-SQL
-🤝 Contributing
-Fork the repository.
-Create a new feature branch: git checkout -b feature/amazing-feature
-Make your changes and test them thoroughly.
-Commit your changes: git commit -m 'Add amazing feature'
-Push to the branch: git push origin feature/amazing-feature
-Open a Pull Request.
-Code Style
-Use 2 spaces for indentation.
-Follow existing naming conventions.
-Add comments for complex logic.
-Update documentation for new features or changes.
-📄 License
-This project is licensed under the ISC License - see the LICENSE file for details.
+```
 
-🙏 Acknowledgments
-Discord.js - The amazing Discord API wrapper that powers this bot.
-Node.js - The runtime environment.
-All the creators of the open-source packages used.
-The community for their contributions and support.
+## 🤝 Contributing
+1.  Fork the repository.
+2.  Create a new feature branch: `git checkout -b feature/amazing-feature`
+3.  Make your changes and test them thoroughly.
+4.  Commit your changes: `git commit -m 'Add amazing feature'`
+5.  Push to the branch: `git push origin feature/amazing-feature`
+6.  Open a Pull Request.
+
+### Code Style
+-   Use 2 spaces for indentation.
+-   Follow existing naming conventions.
+-   Add comments for complex logic.
+-   Update documentation for new features or changes.
+
+## 📄 License
+This project is licensed under the ISC License - see the `LICENSE` file for details.
+
+## 🙏 Acknowledgments
+-   [Discord.js](https://discord.js.org/) - The amazing Discord API wrapper that powers this bot.
+-   [Node.js](https://nodejs.org/) - The runtime environment.
+-   All the creators of the open-source packages used.
+-   The community for their contributions and support.
+
 <div align="center">
-📞 Support & Links
-GitHub Issues | Website | Support Server
+
+---
+
+### 📞 Support & Links
+[**GitHub Issues**](https://github.com/muneebwanee/AlphaBot/issues) | [**Website**](https://alphabot.eu.org) | [**Support Server**](https://discord.alphabot.eu.org)
 
 Made with ❤️ by muneebwanee
 
-⭐ Star this repo | 🐛 Report a Bug | 💡 Request a Feature
+⭐ **Star this repo** | 🐛 **Report a Bug** | 💡 **Request a Feature**
 
 </div>
-```
